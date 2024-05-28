@@ -13,7 +13,7 @@ const Show = (props) => {
 
   return (
     <div>
-        {data.map((individual,index)=>{
+        { data.length > 0 ? data.map((individual,index)=>{
         return (
           <div key={individual.id} className='card'>
             <h1>{individual.name}</h1>
@@ -22,7 +22,7 @@ const Show = (props) => {
             <i onClick={() => deleteHandler(index)} className="ri-delete-bin-6-line"></i>
           </div>
         )
-      })}
+      }) : <h1> No Data Added </h1>}
     </div>
   )
 }
